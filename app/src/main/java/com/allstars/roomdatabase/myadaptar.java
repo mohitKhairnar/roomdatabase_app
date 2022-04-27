@@ -15,12 +15,9 @@ import java.util.List;
 
 public class myadaptar extends RecyclerView.Adapter<myadaptar.viewholder> {
     List<User> users;
-
     myadaptar (List<User> users){
         this.users = users;
     }
-
-
     @NonNull
     @Override
     public viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -28,13 +25,11 @@ public class myadaptar extends RecyclerView.Adapter<myadaptar.viewholder> {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.singlerow,parent,false);
         return new viewholder(view);
     }
-
     @Override
     public void onBindViewHolder(@NonNull viewholder holder, @SuppressLint("RecyclerView") int position) {
         holder.recId.setText(String.valueOf(users.get(position).getUid()));
         holder.recFirst.setText(users.get(position).getFirstName());
         holder.recLast.setText(users.get(position).getLastName());
-
         holder.delbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

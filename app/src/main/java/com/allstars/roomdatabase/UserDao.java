@@ -11,25 +11,12 @@ import java.util.List;
 
 @Dao
 public interface UserDao {
-
-
-
     @Query("SELECT * FROM user")
     List<User> getallusers();
-
     @Query("DELETE FROM User WHERE uid = :uid")
     void deleteById(int uid);
-
-
-
     @Query("UPDATE User SET first_name = :first, last_name = :last WHERE uid =:uid")
     void update(String first, String last, int uid);
-
-
-
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(User... users);
-
-
-
 }

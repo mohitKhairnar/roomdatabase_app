@@ -14,29 +14,20 @@ public class User {
 
     @ColumnInfo(name = "last_name")
     public String lastName;
-
-
-
-
     public User(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
-
     public int getUid() {
         return uid;
     }
-
     public void setUid(int uid) {
         this.uid = uid;
     }
-
     public String getFirstName() {
         return firstName;
     }
     public String getLastName() {
         return lastName;
     }
-
 }
